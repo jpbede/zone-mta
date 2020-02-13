@@ -368,6 +368,9 @@ module.exports = {
             // the connections.
             connections: 10,
 
+            // How many parallel connections to open against a MX per Sending IP
+            connectionsPerMX: 10,
+
             // Throttling applies per connection in a process
             // throttling: '100 messages/second', // max messages per minute, hour or second
 
