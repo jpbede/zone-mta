@@ -368,9 +368,6 @@ module.exports = {
             // the connections.
             connections: 10,
 
-            // How many parallel connections to open against a MX per Sending IP
-            connectionsPerMX: 10,
-
             // Throttling applies per connection in a process
             // throttling: '100 messages/second', // max messages per minute, hour or second
 
@@ -484,6 +481,18 @@ module.exports = {
             }
         }
         */
+    },
+
+    // Receiving MX specific configuration
+    // The keys are RegExp's for matching the MX
+    mxConfig: {
+        // default is required
+        default: {
+            // How many parallel connections per IP to use against a receiving mailserver
+            // This connection limit is shared across the whole ZoneMTA instance
+            // Connections are locked by Receiving IP and Sending IP
+            maxConnections: 50
+        }
     },
 
     pluginsPath: './plugins'
