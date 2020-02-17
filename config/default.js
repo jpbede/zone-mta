@@ -493,6 +493,12 @@ module.exports = {
             // Connections are locked by Receiving IP and Sending IP
             maxConnections: 50
         }
+
+        /*
+        '.*.t-online.de$': {
+            maxConnections: 10
+        }
+         */
     },
 
     pluginsPath: './plugins'
