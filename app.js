@@ -82,6 +82,8 @@ startSMTPInterfaces(err => {
         }
         log.info('QS', 'Queue server started');
 
+        apiServer.queueServer = queueServer;
+
         // Starts the API HTTP REST server that is used by sending processes to fetch messages from the queue
         apiServer.start(err => {
             if (err) {
