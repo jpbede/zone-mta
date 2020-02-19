@@ -483,5 +483,23 @@ module.exports = {
         */
     },
 
+    // Receiving MX specific configuration
+    // The keys are RegExp's for matching the MX
+    mxConfig: {
+        // default is required
+        default: {
+            // How many parallel connections per IP to use against a receiving mailserver
+            // This connection limit is shared across the whole ZoneMTA instance
+            // Connections are locked by Receiving IP and Sending IP
+            maxConnections: 50
+        }
+
+        /*
+        '.*.t-online.de$': {
+            maxConnections: 10
+        }
+         */
+    },
+
     pluginsPath: './plugins'
 };
