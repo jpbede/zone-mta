@@ -486,6 +486,9 @@ module.exports = {
     // Receiving MX specific configuration
     // The keys are RegExp's for matching the MX
     mxConfig: {
+        // Enables the per MX connection limiter
+        connectionLimiter: false,
+
         // default is required
         default: {
             // How many parallel connections per IP to use against a receiving mailserver
